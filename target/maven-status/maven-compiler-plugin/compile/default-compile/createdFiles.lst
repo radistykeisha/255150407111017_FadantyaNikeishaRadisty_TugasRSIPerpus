@@ -1,0 +1,16 @@
+id\ac\ub\filkom\contoh\repository\BukuRepository.class
+id\ac\ub\filkom\contoh\controller\HalamanStockController.class
+id\ac\ub\filkom\contoh\service\AnggotaService.class
+id\ac\ub\filkom\contoh\service\BukuService.class
+id\ac\ub\filkom\contoh\repository\PeminjamanRepository.class
+id\ac\ub\filkom\contoh\service\PeminjamanService.class
+id\ac\ub\filkom\contoh\controller\PeminjamanBoundary.class
+id\ac\ub\filkom\contoh\controller\AnggotaController.class
+id\ac\ub\filkom\contoh\entity\Buku.class
+id\ac\ub\filkom\contoh\controller\BukuController.class
+id\ac\ub\filkom\contoh\entity\Anggota.class
+id\ac\ub\filkom\contoh\entity\Peminjaman.class
+id\ac\ub\filkom\contoh\repository\AnggotaRepository.class
+id\ac\ub\filkom\contoh\controller\PeminjamanBoundary$PinjamRequest.class
+id\ac\ub\filkom\contoh\service\StockService.class
+id\ac\ub\filkom\contoh\ContohApplication.class

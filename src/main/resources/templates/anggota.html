@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Kelola Anggota</title>
+</head>
+<body>
+<h1>Menu Kelola Anggota</h1>
+<p><a href="/buku">-> Ke Halaman Buku</a></p>
+
+<h2>Lihat Anggota</h2>
+<table border="1">
+    <tr><th>ID Anggota</th><th>Nama</th></tr>
+    <tr th:each="a : ${daftarAnggota}">
+        <td th:text="${a.idAnggota}">A001</td>
+        <td th:text="${a.nama}">Nama Anggota</td>
+    </tr>
+</table>
+
+<h2>Tambah Anggota Baru</h2>
+<form th:action="@{/anggota}" method="post">
+    <input name="idAnggota" placeholder="ID Anggota (misal: A001)" required>
+    <input name="nama" placeholder="Nama Lengkap" required>
+    <button type="submit">Simpan Anggota</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Daftar Buku</title>
+</head>
+<body>
+<h1>Menu Kelola Buku</h1>
+<p><a href="/anggota">-> Ke Halaman Kelola Anggota</a></p>
+
+<h2>Lihat & Cari Buku</h2>
+<form th:action="@{/buku}" method="get">
+    <input name="kata" th:value="${kata}" placeholder="Cari judul">
+    <button type="submit">Cari</button>
+</form>
+<br>
+<table border="1">
+    <tr><th>ID</th><th>Judul</th><th>Stok</th></tr>
+    <tr th:each="b : ${daftarBuku}">
+        <td th:text="${b.idBuku}">B001</td>
+        <td th:text="${b.judul}">Judul buku</td>
+        <td th:text="${b.stok}">0</td>
+    </tr>
+</table>
+
+<h2>1. Tambah Buku Baru</h2>
+<form th:action="@{/buku}" method="post">
+    <input name="idBuku" placeholder="ID Buku" required>
+    <input name="judul" placeholder="Judul Buku" required>
+    <input name="stok" type="number" min="0" value="1" required>
+    <button type="submit">Simpan Buku</button>
+</form> <!-- Penutup form Tambah Buku -->
+
+<h2>2. Update Stok Buku (Pustakawan)</h2>
+<form th:action="@{/stok/update}" method="post">
+    <input name="idBuku" placeholder="ID Buku (contoh: B001)" required>
+    <input name="stokBaru" type="number" min="0" placeholder="Stok Baru" required>
+    <button type="submit">Update Stok</button>
+</form>
+
+<h2>3. Ajukan Reservasi (Saat Stok Habis)</h2>
+<form th:action="@{/reservasi}" method="post">
+    <input name="idAnggota" placeholder="ID Anggota (contoh: A001)" required>
+    <input name="idBuku" placeholder="ID Buku (contoh: B001)" required>
+    <button type="submit">Ajukan Reservasi</button>
+</form>
+
+</body>
+</html>
